@@ -43,6 +43,8 @@
 	<string>${INPUT_METHOD_CONNECTION_NAME}</string>
 	<key>InputMethodServerControllerClass</key>
 	<string>${INPUT_METHOD_SERVER_CONTROLLER_CLASS}</string>
+	<key>InputMethodServerDelegateClass</key>
+	<string>${INPUT_METHOD_SERVER_CONTROLLER_CLASS}</string>
 	<key>tsInputMethodCharacterRepertoireKey</key>
 	<array>
 		<string>Hant</string>

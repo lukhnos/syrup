@@ -44,12 +44,19 @@
     IMEDebug(@"%s", __PRETTY_FUNCTION__);
     
     self = [super initWithServer:inServer delegate:inDelegate client:inClient];
-    
 	if (self) {
 	}
 	
 	return self;
 }
+
+- (NSMenu *)menu
+{
+    IMEDebug(@"%s", __PRETTY_FUNCTION__);
+    return nil;
+}
+
+#pragma mark IMKStateSetting protocol methods
 
 - (void)activateServer:(id)inClient
 {
@@ -66,15 +73,10 @@
     IMEDebug(@"%s", __PRETTY_FUNCTION__);
 }
 
-- (BOOL)handleEvent:(NSEvent*)inEvent client:(id)inClient
+- (BOOL)handleEvent:(NSEvent *)inEvent client:(id)inClient
 {
     IMEDebug(@"%s", __PRETTY_FUNCTION__);
     return NO;
 }
 
-- (NSMenu *)menu
-{
-    IMEDebug(@"%s", __PRETTY_FUNCTION__);
-    return nil;
-}
 @end
