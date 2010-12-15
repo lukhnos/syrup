@@ -26,35 +26,29 @@
 //
 
 #import <Cocoa/Cocoa.h>
-#import <InputMethodKit/InputMethodKit.h>
-
-static TISInputSourceRef SearchTISInputSource(NSString *inSourceID);
+#import "OVInputSourceHelper.h"
 
 int main(int argc, char *argv[])
 {
     NSAutoreleasePool *pool = [[NSAutoreleasePool alloc] init];
     
-    // install and enable the input source
-    //
-    // here we assume the input source has no other input mode;
-    // if you need to accommodate more than one mode, you need
-    // to modify the code below
+    // register and enable the input source (along with all its input modes)
     if (argc > 1 && !strcmp(argv[1], "install")) {
         NSString *bundleID = [[NSBundle mainBundle] bundleIdentifier];
         NSURL *bundleURL = [[NSBundle mainBundle] bundleURL];
-        TISInputSourceRef inputSource = SearchTISInputSource(bundleID);
+        TISInputSourceRef inputSource = [OVInputSourceHelper inputSourceForInputSourceID:bundleID];
 
         if (!inputSource) {
             NSLog(@"Registering input source %@ at %@.", bundleID, [bundleURL absoluteString]);
-            OSStatus status = TISRegisterInputSource((CFURLRef)bundleURL);
+			BOOL status = [OVInputSourceHelper registerInputSource:bundleURL];
             
-            if (status != noErr) {
+            if (!status) {
                 NSLog(@"Fatal error: Cannot register input source %@ at %@.", bundleID, [bundleURL absoluteString]);
                 [pool drain];
                 return -1;                
             }
             
-            inputSource = SearchTISInputSource(bundleID);
+            inputSource = [OVInputSourceHelper inputSourceForInputSourceID:bundleID];
             if (!inputSource) {
                 NSLog(@"Fatal error: Cannot find input source %@ after registration.", bundleID, [bundleURL absoluteString]);
                 [pool drain];
@@ -62,11 +56,11 @@ int main(int argc, char *argv[])
             }
         }
         
-        if (inputSource && !CFBooleanGetValue(TISGetInputSourceProperty((TISInputSourceRef)inputSource, kTISPropertyInputSourceIsEnabled))) {
+        if (inputSource && ![OVInputSourceHelper inputSourceEnabled:inputSource]) {							
             NSLog(@"Enabling input source %@ at %@.", bundleID, [bundleURL absoluteString]);
-            OSStatus status = TISEnableInputSource(inputSource);
+            BOOL status = [OVInputSourceHelper enableInputSource:inputSource];
             
-            if (status != noErr) {
+            if (!status != noErr) {
                 NSLog(@"Fatal error: Cannot enable input source %@.", bundleID);
                 [pool drain];
                 return -1;
@@ -109,17 +103,4 @@ int main(int argc, char *argv[])
     [server release];    
     [pool drain];
     return 0;
-}
-
-static TISInputSourceRef SearchTISInputSource(NSString *inSourceID)
-{
-    NSArray *sourceList = (NSArray *)TISCreateInputSourceList(NULL, true);
-    for (id source in sourceList) {
-        NSString *sourceID = (NSString *)TISGetInputSourceProperty((TISInputSourceRef)source, kTISPropertyInputSourceID);
-        if ([sourceID compare:inSourceID] == NSOrderedSame) {
-            return (TISInputSourceRef)source;
-        }
-    }
-    
-    return NULL;
 }

@@ -12,6 +12,7 @@
 		6A29ACF512B5E42800B8FC9C /* Carbon.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6A29ACF412B5E42800B8FC9C /* Carbon.framework */; };
 		6A76B7FB12B5DF24009803CF /* Syrup.icns in Resources */ = {isa = PBXBuildFile; fileRef = 6A76B7F912B5DF24009803CF /* Syrup.icns */; };
 		6A76B7FC12B5DF24009803CF /* SyrupForTIS.icns in Resources */ = {isa = PBXBuildFile; fileRef = 6A76B7FA12B5DF24009803CF /* SyrupForTIS.icns */; };
+		6AAD143C12B94936009568C5 /* OVInputSourceHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 6AAD143B12B94936009568C5 /* OVInputSourceHelper.m */; };
 		6AC2C92812B5CDCA005DFD55 /* InputMethod.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = 6AC2C92712B5CDCA005DFD55 /* InputMethod.xcconfig */; };
 		6AC2C95312B5D421005DFD55 /* InputMethodKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6AC2C95212B5D421005DFD55 /* InputMethodKit.framework */; };
 		6AC2C96312B5D939005DFD55 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 6AC2C96212B5D939005DFD55 /* Info.plist */; };
@@ -35,6 +36,8 @@
 		6A29ACF412B5E42800B8FC9C /* Carbon.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Carbon.framework; path = System/Library/Frameworks/Carbon.framework; sourceTree = SDKROOT; };
 		6A76B7F912B5DF24009803CF /* Syrup.icns */ = {isa = PBXFileReference; lastKnownFileType = image.icns; name = Syrup.icns; path = ../Syrup/Images/Syrup.icns; sourceTree = SOURCE_ROOT; };
 		6A76B7FA12B5DF24009803CF /* SyrupForTIS.icns */ = {isa = PBXFileReference; lastKnownFileType = image.icns; name = SyrupForTIS.icns; path = ../Syrup/Images/SyrupForTIS.icns; sourceTree = SOURCE_ROOT; };
+		6AAD143A12B94936009568C5 /* OVInputSourceHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OVInputSourceHelper.h; sourceTree = "<group>"; };
+		6AAD143B12B94936009568C5 /* OVInputSourceHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OVInputSourceHelper.m; sourceTree = "<group>"; };
 		6AC2C92712B5CDCA005DFD55 /* InputMethod.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; name = InputMethod.xcconfig; path = ../Syrup/InputMethod.xcconfig; sourceTree = SOURCE_ROOT; };
 		6AC2C95212B5D421005DFD55 /* InputMethodKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = InputMethodKit.framework; path = System/Library/Frameworks/InputMethodKit.framework; sourceTree = SDKROOT; };
 		6AC2C96212B5D939005DFD55 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Info.plist; path = ../Syrup/Info.plist; sourceTree = SOURCE_ROOT; };
@@ -64,6 +67,8 @@
 				256AC3D90F4B6AC300CF3369 /* AppDelegate.m */,
 				6AC2C98512B5DD41005DFD55 /* InputMethodController.h */,
 				6AC2C98612B5DD41005DFD55 /* InputMethodController.m */,
+				6AAD143A12B94936009568C5 /* OVInputSourceHelper.h */,
+				6AAD143B12B94936009568C5 /* OVInputSourceHelper.m */,
 			);
 			name = Classes;
 			sourceTree = "<group>";
@@ -211,6 +216,7 @@
 				8D11072D0486CEB800E47090 /* main.m in Sources */,
 				256AC3DA0F4B6AC300CF3369 /* AppDelegate.m in Sources */,
 				6AC2C98712B5DD41005DFD55 /* InputMethodController.m in Sources */,
+				6AAD143C12B94936009568C5 /* OVInputSourceHelper.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
