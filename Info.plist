@@ -49,9 +49,9 @@
 		<string>Hans</string>
 	</array>
 	<key>tsInputMethodIconFileKey</key>
-	<string>Syrup.icns</string>
+	<string>SyrupForTIS.icns</string>
 
-    <!-- Used by HIToolbox, see HIToolbox Release Notes for Mac OS X 10.5 -->
+        <!-- Used by HIToolbox, see HIToolbox Release Notes for Mac OS X 10.5 -->
 	<key>TISInputSourceID</key>
 	<string>org.openvanilla.inputmethod.syrup</string>
 	<key>TISIntendedLanguage</key>
