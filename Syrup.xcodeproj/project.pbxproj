@@ -13,6 +13,10 @@
 		6A76B7FB12B5DF24009803CF /* Syrup.icns in Resources */ = {isa = PBXBuildFile; fileRef = 6A76B7F912B5DF24009803CF /* Syrup.icns */; };
 		6A76B7FC12B5DF24009803CF /* SyrupForTIS.icns in Resources */ = {isa = PBXBuildFile; fileRef = 6A76B7FA12B5DF24009803CF /* SyrupForTIS.icns */; };
 		6AAD143C12B94936009568C5 /* OVInputSourceHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 6AAD143B12B94936009568C5 /* OVInputSourceHelper.m */; };
+		6AAD144712B94A38009568C5 /* InputMethodKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6AC2C95212B5D421005DFD55 /* InputMethodKit.framework */; };
+		6AAD144912B94A48009568C5 /* tistool.m in Sources */ = {isa = PBXBuildFile; fileRef = 6AAD144812B94A48009568C5 /* tistool.m */; };
+		6AAD145312B94CEE009568C5 /* OVInputSourceHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 6AAD143B12B94936009568C5 /* OVInputSourceHelper.m */; };
+		6AAD145F12B94CF9009568C5 /* Carbon.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6A29ACF412B5E42800B8FC9C /* Carbon.framework */; };
 		6AC2C92812B5CDCA005DFD55 /* InputMethod.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = 6AC2C92712B5CDCA005DFD55 /* InputMethod.xcconfig */; };
 		6AC2C95312B5D421005DFD55 /* InputMethodKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6AC2C95212B5D421005DFD55 /* InputMethodKit.framework */; };
 		6AC2C96312B5D939005DFD55 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 6AC2C96212B5D939005DFD55 /* Info.plist */; };
@@ -38,6 +42,8 @@
 		6A76B7FA12B5DF24009803CF /* SyrupForTIS.icns */ = {isa = PBXFileReference; lastKnownFileType = image.icns; name = SyrupForTIS.icns; path = ../Syrup/Images/SyrupForTIS.icns; sourceTree = SOURCE_ROOT; };
 		6AAD143A12B94936009568C5 /* OVInputSourceHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OVInputSourceHelper.h; sourceTree = "<group>"; };
 		6AAD143B12B94936009568C5 /* OVInputSourceHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OVInputSourceHelper.m; sourceTree = "<group>"; };
+		6AAD144312B94A2D009568C5 /* tistool */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = tistool; sourceTree = BUILT_PRODUCTS_DIR; };
+		6AAD144812B94A48009568C5 /* tistool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = tistool.m; path = Tools/tistool.m; sourceTree = "<group>"; };
 		6AC2C92712B5CDCA005DFD55 /* InputMethod.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; name = InputMethod.xcconfig; path = ../Syrup/InputMethod.xcconfig; sourceTree = SOURCE_ROOT; };
 		6AC2C95212B5D421005DFD55 /* InputMethodKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = InputMethodKit.framework; path = System/Library/Frameworks/InputMethodKit.framework; sourceTree = SDKROOT; };
 		6AC2C96212B5D939005DFD55 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Info.plist; path = ../Syrup/Info.plist; sourceTree = SOURCE_ROOT; };
@@ -47,6 +53,15 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		6AAD144112B94A2D009568C5 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				6AAD144712B94A38009568C5 /* InputMethodKit.framework in Frameworks */,
+				6AAD145F12B94CF9009568C5 /* Carbon.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		8D11072E0486CEB800E47090 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -97,6 +112,7 @@
 			isa = PBXGroup;
 			children = (
 				8D1107320486CEB800E47090 /* Syrup.app */,
+				6AAD144312B94A2D009568C5 /* tistool */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -106,6 +122,7 @@
 			children = (
 				080E96DDFE201D6D7F000001 /* Classes */,
 				29B97315FDCFA39411CA2CEA /* Other Sources */,
+				6AAD143F12B94A0F009568C5 /* Tools */,
 				29B97317FDCFA39411CA2CEA /* Resources */,
 				29B97323FDCFA39411CA2CEA /* Frameworks */,
 				19C28FACFE9D520D11CA2CBB /* Products */,
@@ -144,9 +161,33 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		6AAD143F12B94A0F009568C5 /* Tools */ = {
+			isa = PBXGroup;
+			children = (
+				6AAD144812B94A48009568C5 /* tistool.m */,
+			);
+			name = Tools;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		6AAD144212B94A2D009568C5 /* tistool */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 6AAD144A12B94A48009568C5 /* Build configuration list for PBXNativeTarget "tistool" */;
+			buildPhases = (
+				6AAD144012B94A2D009568C5 /* Sources */,
+				6AAD144112B94A2D009568C5 /* Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = tistool;
+			productName = tistool;
+			productReference = 6AAD144312B94A2D009568C5 /* tistool */;
+			productType = "com.apple.product-type.tool";
+		};
 		8D1107260486CEB800E47090 /* Syrup */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = C01FCF4A08A954540054247B /* Build configuration list for PBXNativeTarget "Syrup" */;
@@ -188,6 +229,7 @@
 			projectRoot = "";
 			targets = (
 				8D1107260486CEB800E47090 /* Syrup */,
+				6AAD144212B94A2D009568C5 /* tistool */,
 			);
 		};
 /* End PBXProject section */
@@ -209,6 +251,15 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		6AAD144012B94A2D009568C5 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				6AAD144912B94A48009568C5 /* tistool.m in Sources */,
+				6AAD145312B94CEE009568C5 /* OVInputSourceHelper.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		8D11072C0486CEB800E47090 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -242,6 +293,52 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
+		6AAD144512B94A2D009568C5 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				COPY_PHASE_STRIP = NO;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_ENABLE_FIX_AND_CONTINUE = YES;
+				GCC_MODEL_TUNING = G5;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "$(SYSTEM_LIBRARY_DIR)/Frameworks/AppKit.framework/Headers/AppKit.h";
+				INSTALL_PATH = /usr/local/bin;
+				OTHER_LDFLAGS = (
+					"-framework",
+					Foundation,
+					"-framework",
+					AppKit,
+				);
+				PREBINDING = NO;
+				PRODUCT_NAME = tistool;
+			};
+			name = Debug;
+		};
+		6AAD144612B94A2D009568C5 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				COPY_PHASE_STRIP = YES;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				GCC_ENABLE_FIX_AND_CONTINUE = NO;
+				GCC_MODEL_TUNING = G5;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "$(SYSTEM_LIBRARY_DIR)/Frameworks/AppKit.framework/Headers/AppKit.h";
+				INSTALL_PATH = /usr/local/bin;
+				OTHER_LDFLAGS = (
+					"-framework",
+					Foundation,
+					"-framework",
+					AppKit,
+				);
+				PREBINDING = NO;
+				PRODUCT_NAME = tistool;
+				ZERO_LINK = NO;
+			};
+			name = Release;
+		};
 		C01FCF4B08A954540054247B /* Debug */ = {
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 6AC2C92712B5CDCA005DFD55 /* InputMethod.xcconfig */;
@@ -317,6 +414,15 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		6AAD144A12B94A48009568C5 /* Build configuration list for PBXNativeTarget "tistool" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				6AAD144512B94A2D009568C5 /* Debug */,
+				6AAD144612B94A2D009568C5 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		C01FCF4A08A954540054247B /* Build configuration list for PBXNativeTarget "Syrup" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
