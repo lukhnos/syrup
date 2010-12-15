@@ -1,5 +1,5 @@
 //
-// SyrupController.h
+// InputMethodController.h
 //
 // Copyright (c) 2010-2011 Lukhnos D. Liu (lukhnos at openvanilla dot org)
 // 
