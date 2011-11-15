@@ -76,7 +76,7 @@
 - (BOOL)handleEvent:(NSEvent *)inEvent client:(id)inClient
 {
     IMEDebug(@"%s", __PRETTY_FUNCTION__);
-    return NO;
+    return YES;
 }
 
 @end
